@@ -560,9 +560,14 @@ void setup() {
     startSerialCommandsHandlerTask(true);
 
     wakeUpScreen();
-    if (bruceConfig.startupApp != "" && !startupApp.startApp(bruceConfig.startupApp)) {
-        bruceConfig.setStartupApp("");
+    if (!bruceConfig.instantBoot) {
+        boot_screen_anim();
+        startup_sound();
+        tft.fillScreen(TFT_BLACK);
+        tft.drawBitmap(0, 0, my_logo, 320, 240, TFT_WHITE);
+        delay(3000);
     }
+
 
     RAM_LOG("setup-end");
 }
