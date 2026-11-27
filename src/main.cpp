@@ -2,6 +2,7 @@
 #include <globals.h>
 
 #include "core/bus_HAL.h"
+#include "my_logo.h"
 #include "core/powerSave.h"
 #include "core/ram_profile.h"
 #include "core/serial_commands/cli.h"
